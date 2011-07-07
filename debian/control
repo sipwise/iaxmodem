@@ -1,0 +1,13 @@
+Source: ngcp-iaxmodem
+Section: utils
+Priority: extra
+Maintainer: Andreas Granig <agranig@sipwise.com>
+Build-Depends: debhelper (>= 5), libtiff4-dev
+Standards-Version: 3.9.1
+Homepage: http://sipwise.com/
+
+Package: ngcp-iaxmodem
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Software modem with IAX interface.
+ This tool registers via IAX to an Asterisk server and emulates a modem device for Hylafax. This is portage from upstream http://iaxmodem.sourceforge.net/

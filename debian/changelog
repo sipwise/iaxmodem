@@ -1,0 +1,5 @@
+ngcp-iaxmodem (1.2.0) unstable; urgency=low
+
+  * Initial integration from upstream 1.2.0 version.
+
+ -- Andreas Granig <agranig@sipwise.com>  Thu, 07 Jul 2011 02:10:13 +0200
