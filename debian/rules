@@ -43,12 +43,11 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k 
-	dh_installdirs usr/bin
+	dh_installdirs usr/sbin var/log/iaxmodem etc/logrotate.d
 
 	# Add here commands to install the package into debian/ngcp-iaxmodem.
-	mkdir -p $(CURDIR)/debian/ngcp-iaxmodem/usr/sbin/
-	install -m 755 iaxmodem $(CURDIR)/debian/ngcp-iaxmodem/usr/sbin/ngcp-iaxmodem
-
+	install -m 755 iaxmodem debian/ngcp-iaxmodem/usr/sbin/ngcp-iaxmodem
+	install -m 644 logrotate.conf debian/ngcp-iaxmodem/etc/logrotate.d/ngcp-iaxmodem
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -70,6 +69,7 @@ binary-arch: build install
 	dh_fixperms
 	dh_installdeb
 	dh_shlibdeps
+	dh_installdebconf
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
