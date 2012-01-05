@@ -57,10 +57,8 @@ binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	#dh_installchangelogs ChangeLog
+	dh_installchangelogs
 	dh_installdocs
-	#dh_installexamples
-	#dh_installman
 	dh_installinit --name=ngcp-iaxmodem
 	dh_link
 	dh_strip
