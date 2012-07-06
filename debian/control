@@ -1,7 +1,7 @@
 Source: ngcp-iaxmodem
 Section: utils
 Priority: extra
-Maintainer: Andreas Granig <agranig@sipwise.com>
+Maintainer: Sipwise Development Team <support@sipwise.com>
 Build-Depends: debhelper (>= 5), libtiff4-dev
 Standards-Version: 3.9.1
 Homepage: http://sipwise.com/
