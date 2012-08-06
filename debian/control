@@ -8,6 +8,6 @@ Homepage: http://sipwise.com/
 
 Package: ngcp-iaxmodem
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Software modem with IAX interface.
  This tool registers via IAX to an Asterisk server and emulates a modem device for Hylafax. This is portage from upstream http://iaxmodem.sourceforge.net/
