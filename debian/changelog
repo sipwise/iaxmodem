@@ -1,3 +1,20 @@
+ngcp-iaxmodem (1.2.0-1) unstable; urgency=low
+
+  [ Michael Prokop ]
+  * Debian packaging related changes:
+    - Improve package description
+    - Use upstream website for Homepage entry
+    - wrap and sort items in Debian packaging files
+    - Bump Standards-Version to 3.9.3
+    - Set maintainer field to new default
+    - debian/rules: enable dh_installchangelogs
+    - debian/rules: enable dh_installdocs
+
+  [ Andreas Granig ]
+  * Make init script to behave well
+
+ -- Michael Prokop <mprokop@sipwise.com>  Tue, 28 Aug 2012 13:27:42 +0200
+
 ngcp-iaxmodem (1.2.0) unstable; urgency=low
 
   * Initial integration from upstream 1.2.0 version.
