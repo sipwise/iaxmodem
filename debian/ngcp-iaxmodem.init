@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 ### BEGIN INIT INFO
 # Provides:          ngcp-iaxmodem
 # Required-Start:    $remote_fs $syslog
@@ -30,21 +30,22 @@ if [ -f $DEFAULTS ]; then
    . $DEFAULTS || true
 fi
 
-if [ "$RUN_IAXMODEM" != "yes" ]; then
-    echo "ngcp-iaxmodem not yet configured. Edit $DEFAULTS first."
-    exit 0
-fi
-
 PIDFILE="/var/run/iaxmodem.pid"
 
 set -e
 
 . /lib/lsb/init-functions
 
+function check_run {
+    if [ "$RUN_IAXMODEM" != "yes" ]; then
+        echo "ngcp-iaxmodem configured to not run. Set RUN_IAXMODEM to 'yes' in $DEFAULTS first."
+        exit 0
+    fi
+}
 
 case "$1" in
   start)
-
+        check_run	
         echo -n "Starting $DESC: $NAME"
         start-stop-daemon --start --quiet --oknodo \
 		--pidfile $PIDFILE \
@@ -62,7 +63,7 @@ case "$1" in
         log_end_msg $?
         ;;
   restart|force-reload)
-
+        check_run	
         echo -n "Restarting $DESC: $NAME"
         start-stop-daemon --oknodo --stop --quiet --pidfile \
                 $PIDFILE --exec $DAEMON
