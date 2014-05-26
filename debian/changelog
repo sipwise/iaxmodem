@@ -1,3 +1,12 @@
+ngcp-iaxmodem (1.2.0-1+0~mr3.4.0.0) unstable; urgency=low
+
+  [ Michael Prokop ]
+  * [468a10d] MT#6511 Bump Standards-Version to 3.9.5
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Mon, 26 May 2014 15:42:33 +0200
+
 ngcp-iaxmodem (1.2.0-1+0~mr3.3) unstable; urgency=low
 
   * New release.
