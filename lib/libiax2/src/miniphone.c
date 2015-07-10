@@ -389,7 +389,7 @@ main(int argc, char *argv[])
 		return -1;
 	}
 
-	if ( (port = iax_init(0) < 0)) {
+	if ( (port = iax_init(0, 0) < 0)) {
 		fprintf(stderr, "Fatal error: failed to initialize iax with port %d\n", port);
 		return -1;
 	}

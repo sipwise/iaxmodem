@@ -911,7 +911,7 @@ void iax_set_jb_target_extra( long value )
 	jb_target_extra = value ;
 }
 
-int iax_init(int preferredportno)
+int iax_init(int preferredportno, unsigned long interface)
 {
 	int portno = preferredportno;
 
@@ -943,7 +943,7 @@ int iax_init(int preferredportno)
 			preferredportno = 0;
 
 		sin.sin_family = AF_INET;
-		sin.sin_addr.s_addr = 0;
+		sin.sin_addr.s_addr = interface;
 		sin.sin_port = htons((short)preferredportno);
 		if (bind(netfd, (struct sockaddr *) &sin, sizeof(sin)) < 0)
 		{

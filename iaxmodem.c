@@ -118,6 +118,7 @@ static int window = 1000;		/* u-sec prior to target that we will let audio go */
 static int codec = AST_FORMAT_SLINEAR;	/* negotiated codec */
 
 static int port = 4569;
+static unsigned long interface = 0;
 static int refreshreq = 300;		/* requested refresh */
 static int refresh = 300;		/* negotiated refresh, initialize equal to refreshreq */
 static int codecreq = AST_FORMAT_SLINEAR; /* requested codec */
@@ -340,6 +341,12 @@ setconfigline(char *line)
 	while (*line == '\t' || *line == ' ') line++;
 	port = atoi(line);
 	printlog(LOG_INFO, "Setting port = %d\n", port);
+    }
+    if (strncasecmp(line, "interface", 9) == 0) {
+	line += 9;
+	while (*line == '\t' || *line == ' ') line++;
+	interface = inet_addr(line);
+	printlog(LOG_INFO, "Setting interface = %lu\n", interface);
     }
     if (strncasecmp(line, "refresh", 7) == 0) {
 	line += 7;
@@ -877,8 +884,9 @@ iaxmodem(const char *config, int nondaemon)
     setegid(uucp_gid);
     seteuid(uucp_uid);
     
-    if ((port = iax_init(port) < 0)) {
-	printlog(LOG_ERROR, "Fatal error: failed to initialize iax with port %d\n", port);
+    if ((port = iax_init(port, interface) < 0)) {
+	printlog(LOG_ERROR, "Fatal error: failed to initialize iax with port %d and interface %lu\n",
+			port, interface);
 	cleanup(-1);
     }
     iaxnetfd = iax_get_fd();
