@@ -1,3 +1,15 @@
+ngcp-iaxmodem (1.2.0-1+0~mr4.0.1.0) unstable; urgency=low
+
+  [ Alexander Lutay ]
+  * [6b98414] MT#7505 Add .gitreview file for iaxmodem
+
+  [ Richard Fuchs ]
+  * [71b7293] MT#13895 support binding to a single interface address
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Mon, 13 Jul 2015 15:11:42 +0200
+
 ngcp-iaxmodem (1.2.0-1+0~mr4.0.0.0) unstable; urgency=low
 
   * New release.
