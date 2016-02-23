@@ -3,7 +3,7 @@ Section: utils
 Priority: extra
 Maintainer: Sipwise Development Team <support@sipwise.com>
 Build-Depends: debhelper (>= 5), libtiff5-dev | libtiff4-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://iaxmodem.sourceforge.net/
 
 Package: ngcp-iaxmodem
